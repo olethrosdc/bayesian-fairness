@@ -1,0 +1,4 @@
+for j=1:3
+  R{j}=load (["seq-random-10000-iter-1000-steps-16-samples-1.0-alpha-run-", num2str(j),".dat"]);
+  
+end
