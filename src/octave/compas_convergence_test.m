@@ -11,7 +11,7 @@ This code compares the marginal and credible fairness rules for the COMPAS datas
 %% The attributes are all discrete numerical or categorical variables.
 %%attrs = { "sex", "age_cat", "race", "juv_fel_count", "juv_misd_count", "juv_other_count", "priors_count", "c_charge_degree", "two_year_recid"};
 printf("Loading data\n");
-original_data = TruncateDiscreteData("../../../data/compas.csv", [4:7], 2); % make attributes 4-7 binary
+original_data = TruncateDiscreteData("../../data/compas.csv", [4:7], 2); % make attributes 4-7 binary
 %% Select the attributes for each variable and 
 Z_attr = [1, 3];
 X_attr = [2, 4, 5, 6, 7, 8];
