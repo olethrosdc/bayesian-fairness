@@ -1,6 +1,7 @@
 %% -*- Mode: octave -*-
 %%
 %% This function returns the myopic policy for the marginal model given a belief.
+%% If initial_policy is zero then ranodmly initialise a policy. This is used to allow the algorithm to run with a specific initial policy.
 function policy = GetMarginalPolicy(model, belief, U, lambda, alpha, n_iter, initial_policy = 0)
   A = rows(U);
   X = model{1}.X;
