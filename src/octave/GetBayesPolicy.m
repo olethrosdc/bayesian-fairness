@@ -1,6 +1,14 @@
 %% -*- Mode: octave -*-
 %%
-%% This function returns the myopic Bayes policy for a given belief.
+%% This function returns the myopic Bayes policy for a given belief for a finite number of models.
+%%
+%% Arguments:
+%% - model: a finite collection of models of the conditional probabilities of the variables x,y,z
+%% - belief: a finite vector of probabilities, one for each model
+%% - U: The utility function
+%% - lambda: fairness-utility trade-off
+%% - alpha: step-size
+%% - initial_policy: If initial_policy is zero then ranodmly initialise a policy. This is used to allow the algorithm to run with a specific initial policy.
 function bayes_policy = GetBayesPolicy(model, belief, U, lambda, alpha, n_iter, initial_policy = 0)
   A = rows(U);
   X = model{1}.X;

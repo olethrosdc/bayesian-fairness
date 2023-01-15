@@ -1,6 +1,16 @@
 %% -*- Mode: octave -*-
 %%
-%% This function returns the myopic policy for the marginal model given a belief.
+%% This function returns the myopic policy for the marginal model given a Dirichlet belief 
+%%
+%% Arguments:
+%% - belief: a Dirichlet belief over the conditional probabilities
+%% - U: The utility function
+%% - lambda: fairness-utility trade-off
+%% - n_iter: number of iterations
+%% - alpha: step-size
+%% - initial_policy: If initial_policy is zero then ranodmly initialise a policy. This is used to allow the algorithm to run with a specific initial policy.
+%% - show_result: print the result
+%% - eval_model: reference evaluation model
 function [policy, results] = GetMarginalPolicyDirichlet(belief, U, lambda, alpha, n_iter, initial_policy = 0, show_result = false, eval_model = 0)
   A = rows(U);
   X = belief.X;
