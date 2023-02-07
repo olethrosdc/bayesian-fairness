@@ -1,7 +1,7 @@
 %% Get the delta of a model
 
 function delta = GetModelDelta(model)
-  delta = model.Px_y - model.Px_yz;
+  delta = (model.Px_y - model.Px_yz) * model.Pz_y;
   %% Apparently the above applies the correct transformation of the matrix
   %% delta = zeros(model.X, model.Y, model.Z);
   
